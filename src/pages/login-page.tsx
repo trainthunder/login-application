@@ -1,4 +1,3 @@
-import React from "react";
 import LoginForm from "../components/login-page/login-form";
 
 type Props = {};
