@@ -24,7 +24,7 @@ const LoginForm = ({}: Props) => {
     if (token) {
       localStorage.setItem("authToken", token);
       toast.success("Success Login");
-      navigate("/dashboard");
+      navigate("/home");
     } else {
       toast.error("Email or Password Is Invalid!");
     }
