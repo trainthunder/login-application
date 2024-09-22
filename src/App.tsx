@@ -1,6 +1,6 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/login-page";
+import DashboardHome from "./pages/dashboard-home";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<DashboardHome />} />
         </Routes>
       </BrowserRouter>
     </>

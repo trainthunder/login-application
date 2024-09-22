@@ -7,6 +7,9 @@ export default {
         "nunito-sans": '"Nunito Sans"',
         "protest-guerrilla": '"Protest Guerrilla"',
       },
+      colors: {
+        stateblue: "#6264d5",
+      },
     },
   },
   plugins: [],
