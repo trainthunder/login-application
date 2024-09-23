@@ -1,9 +1,9 @@
-
+import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-type Props = {};
+interface Props {}
 
-const DashboardSidebar = ({}: Props) => {
+const DashboardSidebar: React.FC<Props> = ({}) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -17,17 +17,17 @@ const DashboardSidebar = ({}: Props) => {
   };
 
   return (
-    <nav className="w-full max-w-[50px] md:max-w-[200px] h-full bg-stateblue relative">
+    <nav className="w-full max-w-[50px] md:max-w-[200px] h-full bg-stateblue fixed z-10">
       {/** Profile Icon Section Start */}
       <div className="w-full pt-[44px] flex items-center justify-center">
-        <div className="w-[100px] h-[100px] rounded-full border-[5px] border-white flex items-center justify-center">
+        <div className="w-[100px] md:h-[100px] rounded-full md:border-[5px] border-white flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="size-12 text-white"
+            className="size-5 md:size-12 text-white"
           >
             <path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>
@@ -95,9 +95,10 @@ const DashboardSidebar = ({}: Props) => {
         ) : (
           <div className="w-full bg-stateblue relative flex flex-col">
             <div className="w-[20px] h-full bg-white absolute right-0 flex z-5"></div>
+            <div className="w-full h-[44px] bg-stateblue rounded-l-full flex z-10"></div>
             {/** Button Home Section Start */}
             <button
-              className="w-full py-[10px] bg-stateblue rounded-l-full flex rounded-br-full z-10"
+              className="w-full py-[10px] bg-stateblue rounded-l-full flex rounded-br-full z-10 justify-center items-center gap-[10px]"
               onClick={() => handleNavigate("/home")}
             >
               {/** Home Icon Start */}
@@ -123,8 +124,8 @@ const DashboardSidebar = ({}: Props) => {
 
             {/** Button Shop Section Start */}
             <button
-              className="w-full py-[10px] bg-white rounded-l-full z-10 flex"
-              onClick={() => handleNavigate("/product")}
+              className="w-full py-[10px] bg-white rounded-l-full z-10 flex justify-center items-center gap-[10px]"
+              onClick={() => handleNavigate("/shop")}
             >
               {/** Shop Icon Start */}
               <svg
@@ -150,6 +151,7 @@ const DashboardSidebar = ({}: Props) => {
           </div>
         )}
       </div>
+
       {/** Button Logout Section Start */}
       <button
         className="w-full h-[45px] absolute bottom-[50px] left-0 flex items-center justify-center gap-[10px]"
